@@ -2,5 +2,5 @@
 const mongoose = require("mongoose");
 
 module.exports = ()=>{
-   return mongoose.connect( "mongodb+srv://user:pass@cluster0.4xk9u.mongodb.net/paraIT?retryWrites=true&w=majority");
+   return mongoose.connect( "mongodb+srv://user:pass@cluster0.4xk9u.mongodb.net/parait?retryWrites=true&w=majority");
 }
