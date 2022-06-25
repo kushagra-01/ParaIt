@@ -16,13 +16,11 @@ app.use("", food);
 app.post("/login", login);
 app.post("/register", register);
 
-//connecting ans starting server
-const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, async () => {
+app.listen(6000, async () => {
   try {
     await connect();
-    console.log("listening on port 5000.....");
+    console.log("listening on port 6000.....");
   } catch (err) {
     console.log(err);
   }
