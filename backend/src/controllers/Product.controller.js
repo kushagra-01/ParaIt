@@ -4,7 +4,7 @@ const router = express.Router();
 
 const product_model = require("../models/product.model");
 
-router.post("", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const product_ = await product_model.create(req.body);
     return res.send(product_);
@@ -14,7 +14,7 @@ router.post("", async (req, res) => {
 });
 
 //api to get all product_
-router.get("", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const product_ = await product_model.find().lean().exec();
 
