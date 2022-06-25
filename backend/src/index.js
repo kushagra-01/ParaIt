@@ -18,7 +18,7 @@ app.post("/register", register);
 //connecting ans starting server
 
 
-app.listen(4545, async () => {
+app.listen(process.env.PORT || 3000, async () => {
   try {
     await connect();
     console.log("listening on port 5000.....");
