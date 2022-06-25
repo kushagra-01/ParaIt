@@ -11,7 +11,6 @@ app.use(express.json());
 app.use(cors());
 
 
-
 app.use("", food);
 app.post("/login", login);
 app.post("/register", register);
