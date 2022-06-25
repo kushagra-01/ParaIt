@@ -16,9 +16,9 @@ app.post("/login", login);
 app.post("/register", register);
 
 //connecting ans starting server
-const PORT = 5000;
 
-app.listen(PORT, async () => {
+
+app.listen(4545, async () => {
   try {
     await connect();
     console.log("listening on port 5000.....");
