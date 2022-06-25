@@ -3,7 +3,7 @@ const express = require("express");
 const connect = require("./config/db");
 const { login, register } = require("./controllers/auth.controller");
 
-
+const food = require("./controllers/Product.controller");
 const cors = require("cors");
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(cors());
 
 
 
-
+app.use("", food);
 app.post("/login", login);
 app.post("/register", register);
 
