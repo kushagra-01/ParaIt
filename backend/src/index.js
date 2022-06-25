@@ -17,7 +17,7 @@ app.post("/login", login);
 app.post("/register", register);
 
 //connecting ans starting server
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 app.listen(PORT, async () => {
   try {
