@@ -14,7 +14,7 @@ router.post("", async (req, res) => {
 });
 
 //api to get all product_
-router.get("/", async (req, res) => {
+router.get("", async (req, res) => {
   try {
     const product_ = await product_model.find().lean().exec();
 
