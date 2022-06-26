@@ -57,7 +57,7 @@ export const Men = () =>{
     
 return(
         <>
-        <h1 style={{textAlign:"center",color:"black",fontSize:"30px",fontWeight:"700"}}>Men</h1>
+      
         <div className="sortdiv">
         <div>
         <div className="schild">

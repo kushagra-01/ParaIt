@@ -16,7 +16,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router";
 
 const pages = ["All Products", "Cart"];
-const settings = ["Profile", "Logout"];
+const settings = ["Login", "Register"];
 
 const ResponsiveAppBar = () => {
   const navigate = useNavigate();
@@ -34,8 +34,9 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleCloseUserMenu = (page) => {
+    if (page === "Login") window.location.href="/login"
+    if (page === "Register") window.location.href="/register";
   };
   const handlenavigate = (page) => {
     if (page === "All Products") navigate("/all");
@@ -164,7 +165,7 @@ const ResponsiveAppBar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Remy Sharp" />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -184,7 +185,10 @@ const ResponsiveAppBar = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <MenuItem key={setting} onClick={((el)=>{
+                    handleCloseUserMenu(setting)
+                    
+                  })}>
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}

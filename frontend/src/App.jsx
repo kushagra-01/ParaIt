@@ -7,6 +7,8 @@ import { Cart } from "./componants/cart";
 import { Checkout } from "./componants/checkout";
 import { Payment } from "./componants/payment";
 import { Thankyou } from "./componants/thankyou";
+import Loginnn from "./componants/login";
+import SignUpp from "./componants/signup";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/payment" element={<Payment />}></Route>
         <Route path="/thankyou" element={<Thankyou />}></Route>
+        <Route path="/login" element={<Loginnn/>}></Route>
+        <Route path="/register" element={<SignUpp/>}></Route>
       </Routes>
     </div>
   );
