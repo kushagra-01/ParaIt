@@ -46,12 +46,22 @@ router.post("/cart", async (req, res) => {
   }
 });
 
-//api to get all product_
+//api to get all cart product_
 router.get("/cart", async (req, res) => {
   try {
     const product_ = await cart_model.find().lean().exec();
 
     return res.send(product_);
+  } catch (err) {
+    return res.send(err.message);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const data = await cart_model.findByIdAndDelete(req.params.id).lean().exec();
+
+    return res.send(data);
   } catch (err) {
     return res.send(err.message);
   }
