@@ -47,11 +47,12 @@ router.post("/cart", async (req, res) => {
 });
 
 //api to get all cart product_
+
 router.get("/cart", async (req, res) => {
   try {
-    const product_ = await cart_model.find().lean().exec();
+    const food = await cart_model.find().lean().exec();
 
-    return res.send(product_);
+    return res.send(food);
   } catch (err) {
     return res.send(err.message);
   }
