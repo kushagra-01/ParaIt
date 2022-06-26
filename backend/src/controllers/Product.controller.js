@@ -6,6 +6,15 @@ const product_model = require("../models/product.model");
 const cart_model = require("../models/cart");
 
 
+router.get("/cart", async (req, res) => {
+  try {
+    const food = await cart_model.find().lean().exec();
+
+    return res.send(food);
+  } catch (err) {
+    return res.send(err.message);
+  }
+});
 
 router.post("", async (req, res) => {
   try {
@@ -48,15 +57,7 @@ router.post("/cart", async (req, res) => {
 
 //api to get all cart product_
 
-router.get("/cart", async (req, res) => {
-  try {
-    const food = await cart_model.find().lean().exec();
 
-    return res.send(food);
-  } catch (err) {
-    return res.send(err.message);
-  }
-});
 
 router.delete("/:id", async (req, res) => {
   try {
